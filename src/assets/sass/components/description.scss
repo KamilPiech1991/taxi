@@ -1,0 +1,14 @@
+.desc-big-text-wrap {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-25%);
+}
+
+.desc-big-text {
+    margin: 0;
+    font-size: clamp(80px, 32vw, 550px);
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 0.85;
+    opacity: .1;
+}

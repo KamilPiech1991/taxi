@@ -1,33 +1,11 @@
-.service-wrap {
-  position: relative;
-  border-radius: 25px;
-  border-top-left-radius: 0;
-}
-
-.service-wrap-svg {
-  position: relative;
-  margin-bottom: -0.5em;
-  width: 100%;
-  height: auto;
-  z-index: 9;
-}
-
 .service-card {
-  border-radius: 20px;
-  background: var(--color-light-1);
+  padding: 2em 3em 3em;
+  background-color: var(--color-accent-1);
+  border-radius: 10px;
+  min-height: 200px;
 }
 
-.service-card img {
-  display: inline-block;
-  width: 50px;
-  padding: 0.4em;
-  border-radius: 50%;
-  background: var(--color-accent-1);
-  filter: saturate(80%) brightness(150%);
-}
-
-@media (min-width: 767px) {
-  .service-card {
-    min-height: 130px;
-  }
+.service-card p {
+  color: #fff;
+  font-weight: 500;
 }

@@ -46,14 +46,9 @@ h5,
 h6,
 .h6 {
   font-family: var(--font-secondary);
-  font-weight: 500;
+  font-weight: 600;
   color: var(--color-heading);
-}
-
-.xxl {
-  margin-bottom: 0.5em;
-  font-size: 10vw;
-  line-height: 1.1;
+  text-transform: uppercase;
 }
 
 .xl {
@@ -145,36 +140,37 @@ small,
   letter-spacing: 1px;
 }
 
+.accent-text-right {
+  margin-left: 3em;
+  color: var(--color-accent-1);
+}
+
 @media (min-width: 459px) {
-  .xxl {
+  .xl {
     font-size: clamp(40px, 6.2vw, 90px);
   }
-  .xl {
-    font-size: clamp(30px, 4.3vw, 62px);
-  }
-  h1,
   .h1 {
-    font-size: clamp(27px, 3vw, 42px);
+    font-size: clamp(30px, 4.3vw, 62px);
   }
   h2,
   .h2 {
-    font-size: clamp(24px, 2vw, 28px);
+    font-size: clamp(27px, 3vw, 42px);
   }
   h3,
   .h3 {
-    font-size: clamp(21px, 1.7vw, 24px);
+    font-size: clamp(24px, 2vw, 28px);
   }
   h4,
   .h4 {
-    font-size: clamp(19px, 1.4vw, 21px);
+    font-size: clamp(21px, 1.7vw, 24px);
   }
   h5,
   .h5 {
-    font-size: clamp(17px, 1.1vw, 18px);
+    font-size: clamp(19px, 1.4vw, 21px);
   }
   h6,
   .h6 {
-    font-size: clamp(15px, 1vw, 16px);
+    font-size: clamp(17px, 1.1vw, 18px);
   }
   p,
   .paragraph,

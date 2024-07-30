@@ -1,0 +1,18 @@
+.pricing-big-text-wrap {
+    position: absolute;
+    top: -1em
+}
+
+.pricing-big-text {
+    margin: 0;
+    font-size: clamp(80px, 22vw, 358px);
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 0.85;
+    opacity: .1
+}
+
+.pricing-wrap p {
+    margin-top: 2em;
+    color: #fff
+}

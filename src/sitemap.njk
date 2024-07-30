@@ -15,13 +15,6 @@ layout: null
 
         <url>
             <loc>
-                https://przemekmiros.pl/realizacje/
-            </loc>
-            <lastmod>{{ page.date.toISOString() }}</lastmod>
-        </url>
-
-        <url>
-            <loc>
                 https://przemekmiros.pl/wycena/
             </loc>
             <lastmod>{{ page.date.toISOString() }}</lastmod>
@@ -55,11 +48,5 @@ layout: null
         </url> 
     {% endfor %}
 
-    {% for page in collections.towns %}
-        <url>
-            <loc>https://przemekmiros.pl{{ page.url | url }}</loc>
-            <lastmod>{{ page.date.toISOString() }}</lastmod>
-        </url> 
-    {% endfor %}
 
 </urlset>
