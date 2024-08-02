@@ -16,12 +16,6 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPlugin(eleventyPluginFilesMinifier);
 
 
-        // Collection blog
-        eleventyConfig.addCollection('posts', function(collectionApi) {
-          return collectionApi.getFilteredByGlob('src/content/blog/**/*.md').reverse();
-          });
-
-      
         // Date
         eleventyConfig.addFilter('dateDisplay', require('./src/filters/date-display.js'));
         eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
