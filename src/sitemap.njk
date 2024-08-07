@@ -13,40 +13,4 @@ layout: null
             <lastmod>{{ page.date.toISOString() }}</lastmod>
         </url> 
 
-        <url>
-            <loc>
-                https://piaseczno-taxi.pl/wycena/
-            </loc>
-            <lastmod>{{ page.date.toISOString() }}</lastmod>
-        </url>
-
-        <url>
-            <loc>
-                https://piaseczno-taxi.pl/kontakt/
-            </loc>
-            <lastmod>{{ page.date.toISOString() }}</lastmod>
-        </url>
-
-        <url>
-            <loc>
-                https://piaseczno-taxi.pl/blog/
-            </loc>
-            <lastmod>{{ page.date.toISOString() }}</lastmod>
-        </url>
-
-        <url>
-            <loc>
-                https://piaseczno-taxi.pl/mapa-strony/
-            </loc>
-            <lastmod>{{ page.date.toISOString() }}</lastmod>
-        </url>
-       
-    {% for page in collections.posts %}
-        <url>
-            <loc>https://piaseczno-taxi.pl{{ page.url | url }}</loc>
-            <lastmod>{{ page.date.toISOString() }}</lastmod>
-        </url> 
-    {% endfor %}
-
-
 </urlset>

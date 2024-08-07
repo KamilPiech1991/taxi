@@ -1,0 +1,11 @@
+.service-card {
+  padding: 2em 3em 3em;
+  background-color: var(--color-accent-1);
+  border-radius: 10px;
+  min-height: 200px;
+}
+
+.service-card p {
+  color: #fff;
+  font-weight: 500;
+}

@@ -1,0 +1,5 @@
+
+User-agent: * 
+Allow: / 
+Sitemap: https://piaseczno-taxi.pl/sitemap.xml
+

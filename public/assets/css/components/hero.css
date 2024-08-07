@@ -1,0 +1,28 @@
+.hero {
+  background: url("/assets/img/hero/hero.png");
+  background-size: cover;
+}
+
+.hero h1 .line-parent:nth-child(2) {
+  color: #fff;
+}
+
+.hero h1 .line-parent:nth-child(3) {
+  color: transparent;
+  -webkit-text-stroke: 2px #fff;
+}
+
+.hero-card {
+  border-radius: 10px;
+  transform: translateY(5em);
+}
+
+.hero-card img {
+  margin-top: -6em;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    color: #fff;
+  }
+}
