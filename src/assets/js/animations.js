@@ -308,6 +308,7 @@ function animationMain() {
 
          // Nav menu
          const menuToggle = document.getElementById("menuToggle");
+         const navLink = document.querySelectorAll('.navlink');
          const menuBar = gsap.timeline();
          var tl = gsap.timeline({ paused: true});
          tl.to('.fullpage-menu', {
@@ -338,6 +339,12 @@ function animationMain() {
              tl.reversed(!tl.reversed());
            // menuWrap.classList.toggle("active");
          });
+         navLink.forEach(link =>{
+          link.addEventListener('click', () => {
+            tl.reversed(!tl.reversed());//toggles the orientation
+          })
+        });
+
 
          if (document.querySelector('.send-icon-big')) {
           gsap.from('.send-icon-big', {

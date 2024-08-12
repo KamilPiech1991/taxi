@@ -120,6 +120,27 @@
     width: 0%;
   }
 }
+.whatsup-wrap {
+  position: fixed;
+  bottom: 2em;
+  left: 2em;
+  z-index: 999;
+}
+
+.whatsup-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 1em;
+  background: #25d366;
+  border-radius: 15px;
+  color: #fff;
+}
+
+.whatsup-btn span {
+  display: inline-block;
+  margin-left: 0.5em;
+}
+
 @media (min-width: 767px) {
   .button-anim:hover .button-anim-icon::before {
     transform: scale(1);
