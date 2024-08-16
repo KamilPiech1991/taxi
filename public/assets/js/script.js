@@ -62,7 +62,7 @@ if (document.querySelector('.swiper')) {
   var swiper = new Swiper(".swiper", {
     grabCursor: true,
     slidesPerView: 1,
-    spaceBetween: 15,
+    spaceBetween: 22,
     lazyPreloadPrevNext: 1,
     centeredSlides: false,
     loop: true,
@@ -78,7 +78,7 @@ if (document.querySelector('.swiper')) {
       prevEl: '.swiper-button-prev',
     },
     autoplay: {
-      delay: 5000,
+      delay: 3000,
     },
     keyboard: {
       enabled: true
@@ -86,19 +86,19 @@ if (document.querySelector('.swiper')) {
     mousewheel: false,
     breakpoints: {
       460: {
-        slidesPerView: 1.25
+        slidesPerView: 2
       },
       768: {
-        slidesPerView: 1.8
+        slidesPerView: 2
       },
       991: {
-        slidesPerView: 2
+        slidesPerView: 3
       },
       1024: {
-        slidesPerView: 2
+        slidesPerView: 3
       },
       1200: {
-        slidesPerView: 2
+        slidesPerView: 3
       }
     }
   });
