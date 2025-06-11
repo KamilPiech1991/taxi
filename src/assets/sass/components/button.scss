@@ -167,3 +167,91 @@
         stroke: var(--color-accent-1)
       }
 }
+
+
+.fixed-button {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    opacity: 0;
+    transform: translateY(100px);
+    visibility: hidden;
+    animation: 1s phoneFadeIn 2s linear forwards;
+    z-index: 9999
+}
+
+@keyframes phoneFadeIn {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+        visibility: hidden;
+    }    
+    30% {
+        transform: translateY(100px);
+        opacity: 0;
+        visibility: visible;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.fixed-phone {
+    display: inline-block;
+    padding: 12px;
+    border-radius: 50%;
+    box-shadow: 0 0 30px #0001;
+    background: #25d366;
+}
+
+.fixed-phone-icon {
+    display: inline-block;
+    width: 34px;
+    height: auto;
+    animation: phoneRing 1s infinite ease-in-out;
+}
+
+@keyframes phoneRing {
+    0% {
+        transform: rotate(0deg);
+    }
+    10% {
+        transform: rotate(-10deg);
+    }
+    20% {
+        transform: rotate(10deg);
+    }
+    30% {
+        transform: rotate(-10deg);
+    }
+    40% {
+        transform: rotate(10deg);
+    }
+    50% {
+        transform: rotate(-10deg);
+    }
+    60% {
+        transform: rotate(10deg);
+    }
+    70% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.fixed-phone-icon svg path {
+    fill: #fff;
+}
+
+
+
+@media(min-width:767px) {
+   .fixed-button {
+    display: none;
+   }
+}
