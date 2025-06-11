@@ -329,7 +329,7 @@ function handleSubmit(formId, redirectUrl) {
   }
 }
 
-handleSubmit('briefForm', '/wyslano-formularz');
+handleSubmit('taxiForm', '/wyslano-formularz');
 handleSubmit('contactForm', '/wyslano-formularz');
 
 
