@@ -1,4 +1,3 @@
-
 document.documentElement.classList.add('cc--darkmode');
 
 CookieConsent.run({
@@ -21,7 +20,11 @@ CookieConsent.run({
             readOnly: true
         },
         functionality: {},
-        analytics: {},
+        analytics: {
+            onAccept: () => {
+                loadGA4();
+            }
+        },
         marketing: {}
     },
     language: {
@@ -31,7 +34,7 @@ CookieConsent.run({
             pl: {
                 consentModal: {
                     title: "Ta strona używa plików cookies",
-                    description: "Używamy plików cookies do personalizowania treści i reklam, udostępniania funkcji mediów społecznościowych i analizowania ruchu na stronie. ",
+                    description: "Używamy plików cookies do personalizowania treści i reklam, udostępniania funkcji mediów społecznościowych i analizowania ruchu na stronie.",
                     acceptAllBtn: "Akceptuj",
                     showPreferencesBtn: "Ustawienia"
                 },
@@ -49,22 +52,22 @@ CookieConsent.run({
                         },
                         {
                             title: "Niezbędne pliki cookie<span class=\"pm__badge\">Zawsze aktywne</span>",
-                            description: "Te pliki cookies są niezbędne do działania witryny i nie można ich wyłączyć w naszych systemach. Zazwyczaj są one ustawiane wyłącznie w odpowiedzi na podejmowane przez Ciebie działania, które są równoznaczne z żądaniem usług, jak np. ustawienie preferencji dotyczących prywatności, logowanie czy wypełnianie formularzy. Te pliki cookie nie przechowują żadnych danych osobowych.",
+                            description: "Te pliki cookies są niezbędne do działania witryny i nie można ich wyłączyć w naszych systemach...",
                             linkedCategory: "necessary"
                         },
                         {
                             title: "Funkcjonalne pliki cookie",
-                            description: "Funkcjonalne pliki cookie pomagają realizować określone funkcje, takie jak udostępnianie zawartości witryny na platformach mediów społecznościowych, zbieranie opinii i inne funkcje stron trzecich.",
+                            description: "Funkcjonalne pliki cookie pomagają realizować określone funkcje...",
                             linkedCategory: "functionality"
                         },
- 						{
+                        {
                             title: "Analityczne pliki cookie",
-                            description: "Te pliki cookie mogą być ustawiane za pośrednictwem naszej witryny przez naszych partnerów reklamowych. Mogą być one wykorzystywane przez te firmy do tworzenia profilu Twoich zainteresowań i wyświetlania odpowiednich reklam w innych witrynach.",
+                            description: "Te pliki cookie mogą być ustawiane za pośrednictwem naszej witryny przez naszych partnerów reklamowych...",
                             linkedCategory: "analytics"
                         },
                         {
                             title: "Reklamowe pliki cookie",
-                            description: "Pliki cookie dotyczące wydajności służą do zrozumienia i analizy kluczowych wskaźników wydajności witryny, co pomaga zapewnić odwiedzającym lepsze doświadczenia użytkownika.",
+                            description: "Pliki cookie dotyczące wydajności służą do zrozumienia i analizy...",
                             linkedCategory: "marketing"
                         },
                         {
@@ -77,3 +80,19 @@ CookieConsent.run({
         }
     }
 });
+
+// 🎯 Funkcja do dynamicznego ładowania GA4 po zgodzie
+function loadGA4() {
+    const script = document.createElement('script');
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-0M1SQGCPE3';
+    script.async = true;
+    document.head.appendChild(script);
+
+    script.onload = () => {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'G-0M1SQGCPE3');
+    };
+}
