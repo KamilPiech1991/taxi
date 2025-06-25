@@ -32,3 +32,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: public/ # katalog, gdzie Eleventy generuje stronę
           server-dir: /strona/ # zmień na katalog docelowy na serwerze
+          passive: true
