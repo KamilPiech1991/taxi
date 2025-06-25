@@ -1,4 +1,4 @@
-document.documentElement.classList.add('cc--darkmode');
+import 'https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.umd.js';
 
 CookieConsent.run({
     guiOptions: {
@@ -19,13 +19,7 @@ CookieConsent.run({
         necessary: {
             readOnly: true
         },
-        functionality: {},
-        analytics: {
-            onAccept: () => {
-                loadGA4();
-            }
-        },
-        marketing: {}
+        analytics: {}
     },
     language: {
         default: "pl",
@@ -33,46 +27,38 @@ CookieConsent.run({
         translations: {
             pl: {
                 consentModal: {
-                    title: "Ta strona używa plików cookies",
-                    description: "Używamy plików cookies do personalizowania treści i reklam, udostępniania funkcji mediów społecznościowych i analizowania ruchu na stronie.",
-                    acceptAllBtn: "Akceptuj",
-                    showPreferencesBtn: "Ustawienia"
+                    title: "Ta strona wykorzystuje pliki cookies!",
+                    description: "Używamy plików cookie, aby zapewnić prawidłowe działanie witryny, analizować ruch i wydajność oraz udostępniać funkcje mediów społecznościowych. Kliknij nagłówki różnych kategorii, aby dowiedzieć się więcej i zmienić nasze ustawienia domyślne. ",
+                    acceptAllBtn: "Akceptuj wszystkie",
+                    acceptNecessaryBtn: "Odrzuć wszystkie",
+                    showPreferencesBtn: "Zarządzaj ustawieniami",
+                    footer: "<a href=\"/polityka-prywatnosci/\">Polityka prywatności</a>\n<a href=\"/regulamin-strony/\">Regulamin</a>"
                 },
                 preferencesModal: {
-                    title: "Ustawienia plików cookies",
-                    acceptAllBtn: "Akceptuj",
-                    acceptNecessaryBtn: "Odrzuć",
+                    title: "Centrum zarządzania zgodami",
+                    acceptAllBtn: "Akceptuj wszystkie",
+                    acceptNecessaryBtn: "Odrzuć wszystkie",
                     savePreferencesBtn: "Zapisz ustawienia",
-                    closeIconLabel: "Zamknij",
+                    closeIconLabel: "Zamknij okno",
                     serviceCounterLabel: "Usługa|Usługi",
                     sections: [
                         {
                             title: "Wykorzystanie plików cookie",
-                            description: "Ponieważ szanujemy Twoje prawo do prywatności, możesz nie zezwalać na niektóre rodzaje plików cookie. Kliknij nagłówki różnych kategorii, aby dowiedzieć się więcej i zmienić domyślne ustawienia."
+                            description: "Używamy plików cookie, aby zapewnić prawidłowe działanie witryny, analizować ruch i wydajność oraz udostępniać funkcje mediów społecznościowych. Kliknij nagłówki różnych kategorii, aby dowiedzieć się więcej i zmienić nasze ustawienia domyślne."
                         },
                         {
-                            title: "Niezbędne pliki cookie<span class=\"pm__badge\">Zawsze aktywne</span>",
-                            description: "Te pliki cookies są niezbędne do działania witryny i nie można ich wyłączyć w naszych systemach...",
+                            title: "Niezbędne pliki cookie <span class=\"pm__badge\">Zawsze włączone</span>",
+                            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             linkedCategory: "necessary"
                         },
                         {
-                            title: "Funkcjonalne pliki cookie",
-                            description: "Funkcjonalne pliki cookie pomagają realizować określone funkcje...",
-                            linkedCategory: "functionality"
-                        },
-                        {
-                            title: "Analityczne pliki cookie",
-                            description: "Te pliki cookie mogą być ustawiane za pośrednictwem naszej witryny przez naszych partnerów reklamowych...",
+                            title: "Pliki cookie analityczne",
+                            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             linkedCategory: "analytics"
                         },
                         {
-                            title: "Reklamowe pliki cookie",
-                            description: "Pliki cookie dotyczące wydajności służą do zrozumienia i analizy...",
-                            linkedCategory: "marketing"
-                        },
-                        {
                             title: "Więcej informacji",
-                            description: "W przypadku jakichkolwiek pytań związanych z polityką dotyczącą plików cookie, prosimy o <a class=\"cc__link\" href=\"/kontakt\">kontakt</a>."
+                            description: "W razie pytań dotyczących mojej polityki plików cookie i Twoich wyborów, proszę <a class=\"cc__link\" href=\"#yourdomain.com\">skontaktuj się ze mną</a>."
                         }
                     ]
                 }
@@ -80,19 +66,3 @@ CookieConsent.run({
         }
     }
 });
-
-// 🎯 Funkcja do dynamicznego ładowania GA4 po zgodzie
-function loadGA4() {
-    const script = document.createElement('script');
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-0M1SQGCPE3';
-    script.async = true;
-    document.head.appendChild(script);
-
-    script.onload = () => {
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        window.gtag = gtag;
-        gtag('js', new Date());
-        gtag('config', 'G-0M1SQGCPE3');
-    };
-}
